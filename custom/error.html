@@ -1,0 +1,26 @@
+{% extends "templates/error.html" %}
+
+{% block h1_error %}
+{% if status_code == 403 %}
+{{ super() }}
+<p>
+  <strong>It looks like you need to request an account!</strong> If you are an NCSSM instructor or student, you can request an account
+  by putting in an 
+  <a href="https://ncssm.freshservice.com/">ITS Help Ticket</a>.
+</p>
+{% elif status_code == 400 %}
+{{ super() }}
+<p>
+  Please login again from <a href="https://datahub.ncssm.edu">the home page</a>.
+</p>
+{% elif status_code == 500 %}
+{{ super() }}
+<p>
+  Oh no! Something is wrong on our end. If this problem persists, please put in an
+  <a href="https://ncssm.freshservice.com/">ITS Help Ticket</a>.
+</p>
+{% else %}
+{{ super() }}
+{% endif %}
+
+{% endblock h1_error %}
