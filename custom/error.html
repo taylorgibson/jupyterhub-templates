@@ -4,9 +4,7 @@
 {% if status_code == 403 %}
 {{ super() }}
 <p>
-  <strong>It looks like you need to request an account!</strong> If you are an NCSSM instructor or student, you can request an account
-  by putting in an 
-  <a href="https://ncssm.freshservice.com/">ITS Help Ticket</a>.
+  <strong>Your account is not authorized to use this service</strong>.
 </p>
 {% elif status_code == 400 %}
 {{ super() }}
@@ -16,8 +14,7 @@
 {% elif status_code == 500 %}
 {{ super() }}
 <p>
-  Oh no! Something is wrong on our end. If this problem persists, please put in an
-  <a href="https://ncssm.freshservice.com/">ITS Help Ticket</a>.
+  Oh no! Something is wrong on our end. If this problem persists, please put in an ITS Help Ticket.
 </p>
 {% else %}
 {{ super() }}
